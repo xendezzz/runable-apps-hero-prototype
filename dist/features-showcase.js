@@ -58,7 +58,7 @@
   track.addEventListener('pointerup',endDrag);track.addEventListener('pointercancel',endDrag);track.addEventListener('lostpointercapture',endDrag);
   track.tabIndex=0;
   track.setAttribute('role','region');
-  track.setAttribute('aria-label','App features. Use left and right arrow keys to explore all four cards.');
+  track.setAttribute('aria-label','App features. Use left and right arrow keys to explore all 6 cards.');
   track.addEventListener('keydown',event=>{
     if(event.target!==track||!['ArrowLeft','ArrowRight','Home','End'].includes(event.key))return;
     event.preventDefault();
