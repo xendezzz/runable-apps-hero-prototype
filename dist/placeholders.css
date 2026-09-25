@@ -1,0 +1,6 @@
+/* Preserve every media slot; remove decorative media effects until assets arrive. */
+.process-video,.feature-card video,.device-media{background:#d9d9d9!important}
+.process-video-shade,.process-center-play,.process-video-controls,.dither-motion,.manage-color-reveal{display:none!important}
+.process-video::after,.device-media::before,.device-media::after{display:none!important}
+.process-video{pointer-events:none}
+.shot img,.solution-image img,.solution-mobile-image img,.device-ui-image,.footer-float img{background:#d9d9d9}
