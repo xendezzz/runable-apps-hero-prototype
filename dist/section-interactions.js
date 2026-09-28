@@ -70,6 +70,7 @@
   }
   document.querySelectorAll('.feature-card').forEach(card=>{
     const video=card.querySelector('video');
+    if(!video)return;
     const state={visible:false,active:card.classList.contains('is-active'),finished:false};
     states.set(video,state);
     video.loop=false;

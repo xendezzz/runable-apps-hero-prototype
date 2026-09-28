@@ -4,3 +4,52 @@
 .process-video::after,.device-media::before,.device-media::after{display:none!important}
 .process-video{pointer-events:none}
 .shot img,.solution-image img,.solution-mobile-image img,.device-ui-image,.footer-float img{background:#d9d9d9}
+
+/* Phone proportions; retain the existing prompt coordinates and scene sizing. */
+.hero .scene-canvas .assets-group{transform:none}
+.hero .scene-canvas .shot{width:220px!important;height:476px!important;padding:0;border-radius:24px!important}
+.hero .scene-canvas .shot img{border-radius:23px!important}
+.hero .scene-canvas .shot.left{left:350px;top:35px}
+.hero .scene-canvas .shot.center{left:610px;top:12px}
+.hero .scene-canvas .shot.right{left:870px;top:35px}
+@media(max-width:700px){
+ .hero .scene-canvas .shot.center{left:626px;top:0;width:188px!important;height:408px!important}
+}
+
+/* Match the hero phone aspect ratio in the closing gallery. */
+.footer-templates .footer-float:nth-child(n){width:clamp(150px,16vw,230px)}
+.footer-templates .footer-float img{aspect-ratio:220/476;width:100%;height:auto;object-fit:cover;border-radius:16px}
+.floating-footer .footer-stage{height:1050px}
+@media(max-width:700px){.floating-footer .footer-stage{height:900px}.footer-templates .footer-float:nth-child(n){width:170px}}
+/* Larger layered phone previews, cropped by the hero's lower edge. */
+.hero .scene-canvas .shot{width:340px!important;height:736px!important;border-radius:30px!important}
+.hero .scene-canvas .shot img{border-radius:29px!important}
+.hero .scene-canvas .shot.left{left:310px;top:100px}
+.hero .scene-canvas .shot.center{left:550px;top:40px;z-index:6}
+.hero .scene-canvas .shot.right{left:790px;top:100px}
+@media(max-width:700px){
+ .hero .scene-canvas .shot.center{left:550px;top:25px;width:340px!important;height:736px!important}
+}
+
+/* Finished app artwork. */
+.app-process-art{background:#ecebe2!important;aspect-ratio:16/9}
+.app-process-art>img{display:block;width:100%;height:100%;object-fit:cover}
+.feature-card .app-feature-art{display:block;width:100%;height:70%;object-fit:cover;object-position:center;flex:none}
+.feature-card:has(.app-feature-art){background:#fff;display:flex;flex-direction:column}
+.feature-card:has(.app-feature-art) .feature-caption{position:relative;inset:auto;background:#fff;padding:5% 6%;margin:0;flex:1;box-shadow:none;backdrop-filter:none}
+.feature-card:has(.app-feature-art)::before,.feature-card:has(.app-feature-art)::after{display:none}
+.features.is-compact .feature-card .app-feature-art{height:auto;aspect-ratio:880/650}
+.mobile-showcase .device-media{background:#e8ece3!important}
+.mobile-showcase .device-desktop{background:#e3e9ef!important}
+.device-media .device-ui-image{background:transparent}
+.hero .shot::after{display:none!important}
+/* Template artwork is 4:3: fit the frame to it so no placeholder bands show. */
+.solutions .solution-image,.solutions .solution-mobile-image{aspect-ratio:4/3;height:auto;background:transparent;border:0}
+.solutions .solution-image img,.solutions .solution-mobile-image img{aspect-ratio:4/3;background:transparent;object-fit:cover}
+
+/* Keep the realistic UI art sharp and fully visible in every feature frame. */
+.feature-card .app-feature-art{object-fit:contain;background:#fff}
+.mobile-showcase .device-ui-image{image-rendering:auto}
+
+.process-video.app-walkthrough{pointer-events:auto;aspect-ratio:16/9;height:auto;padding:0;background:#000!important;cursor:auto}
+.process-video.app-walkthrough video{position:relative;display:block;inset:auto;width:100%;height:100%;aspect-ratio:16/9;object-fit:contain;filter:none;opacity:1}

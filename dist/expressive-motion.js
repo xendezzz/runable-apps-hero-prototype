@@ -14,7 +14,6 @@
   document.querySelector('.process .inline-cta').addEventListener('click',()=>{scrollTo('.hero');document.querySelector('#build-website').focus({preventScroll:true})});
   document.querySelector('.solutions-intro .inline-cta').addEventListener('click',()=>{scrollTo('#solutions-accordion');document.querySelector('.accordion-item.open .accordion-trigger')?.focus({preventScroll:true})});
   document.querySelector('.features .inline-cta').addEventListener('click',()=>{scrollTo('#feature-track');document.querySelector('#feature-track').focus({preventScroll:true})});
-  document.querySelector('.device-intro .inline-cta').addEventListener('click',()=>{scrollTo('.device-grid');document.querySelector('.device-card-mobile .download-actions a').focus({preventScroll:true})});
   document.querySelector('.get-started').textContent='Start building';
   document.querySelector('.footer-build').textContent='Build my app';
   document.querySelectorAll('.pricing-compare').forEach(element=>element.remove());

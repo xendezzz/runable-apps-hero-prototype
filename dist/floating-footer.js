@@ -1,10 +1,10 @@
 (() => {
  const footer=document.querySelector('.floating-footer'); if(!footer)return;
  const stage=footer.querySelector('.footer-stage'), gallery=footer.querySelector('.footer-templates');
- const assets=["care-hero-v3","sales-hero-v3","finance-hero-v3","hydration-hero-v3","garden-hero-v3","haircare-hero-v3"];
- gallery.replaceChildren(...Array.from({length:12},(_,i)=>{
+ const assets=["footer-music","footer-food","footer-money","footer-pets","footer-language","footer-stars"];
+ gallery.replaceChildren(...Array.from({length:assets.length},(_,i)=>{
   const card=document.createElement('div');card.className='footer-float';
-  const img=new Image();img.src=`assets/footer/${assets[i%assets.length]}.jpg`;img.alt='';img.width=1600;img.height=900;img.loading='lazy';card.append(img);return card;
+  const img=new Image();img.src=`assets/mobile-apps/${assets[i%assets.length]}.webp`;img.alt='';img.width=900;img.height=1950;img.loading='lazy';card.append(img);return card;
  }));
  const cards=[...gallery.children], reduced=matchMedia('(prefers-reduced-motion: reduce)');
  let visible=false,raf=0,last=0,phase=0,target=0,cursor=0,width=stage.clientWidth,hovering=false,speed=1;

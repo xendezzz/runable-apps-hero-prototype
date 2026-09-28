@@ -5,8 +5,8 @@
   const phone=section.querySelector('.device-card-mobile');
   const desktop=section.querySelector('.device-card-desktop');
   section.querySelector('.section-heading').innerHTML='Your app,<br>within reach';
-  phone.querySelector('img').src='assets/manage/manage-phone-sharp.png';
-  desktop.querySelector('img').src='assets/manage/manage-desktop-figma.svg';
+  phone.querySelector('img').src='assets/mobile-apps/manage-mobile-real.webp';
+  desktop.querySelector('img').src='assets/mobile-apps/manage-desktop-real.webp';
   const reduced=matchMedia('(prefers-reduced-motion: reduce)');
   const sticky=section.querySelector('.mobile-sticky');
   let frame=0,base=0,current=0,lastTime=0,travel=1;

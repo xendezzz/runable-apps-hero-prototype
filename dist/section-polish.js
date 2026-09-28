@@ -12,7 +12,6 @@
  const meter=document.createElement('div');meter.className='feature-progress';meter.setAttribute('aria-hidden','true');meter.innerHTML='<span></span>';track.after(meter);
  let scheduled=0;
  function update(){scheduled=0;const cards=[...track.querySelectorAll('.feature-card')];const first=cards[0].getBoundingClientRect(),last=cards.at(-1).getBoundingClientRect();const progress=section.classList.contains('is-compact')?track.scrollLeft/Math.max(1,track.scrollWidth-track.clientWidth):Math.max(0,-parseFloat(getComputedStyle(track).getPropertyValue('--feature-shift')||0))/Math.max(1,last.left-first.left);meter.firstChild.style.transform='scaleX('+(Math.min(1,Math.max(0,progress))*.75+.25)+')';
-  const manage=document.querySelector('.mobile-showcase'),r=manage.getBoundingClientRect();manage.style.setProperty('--backdrop-y',reduced.matches?'0px':(Math.max(-1,Math.min(1,r.top/innerHeight))*16)+'px');
  }
  const schedule=()=>{if(!scheduled)scheduled=requestAnimationFrame(update)};addEventListener('scroll',schedule,{passive:true});track.addEventListener('scroll',schedule,{passive:true});addEventListener('resize',schedule);reduced.addEventListener('change',schedule);update();
  const toggle=document.querySelector('.billing-toggle');const slider=document.createElement('span');slider.className='billing-slider';slider.setAttribute('aria-hidden','true');toggle.prepend(slider);
